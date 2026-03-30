@@ -56,11 +56,48 @@ bug-reports/
 
 ---
 
+## Automation
+
+API tests written with Playwright, targeting the Dog Friendly backend deployed on Render.
+
+```
+automation/
+├── playwright.config.js
+├── .env.example
+└── tests/
+    └── auth.spec.js   # POST /api/auth/login — 3 tests
+```
+
+**Run the tests:**
+
+```bash
+cd automation
+npx playwright test
+```
+
+**Expected output:**
+
+```
+Auth — POST /api/auth/login
+  ✓ login succeeds with valid credentials
+  ✓ login fails with wrong password
+  ✓ login fails when email is missing
+
+3 passed
+```
+
+| File         | Endpoint             | Tests | Coverage                                   |
+| ------------ | -------------------- | ----- | ------------------------------------------ |
+| auth.spec.js | POST /api/auth/login | 3     | Valid login, wrong password, missing field |
+
+---
+
 ## Tools
 
 | Tool             | Purpose                                           |
 | ---------------- | ------------------------------------------------- |
 | Linear           | Issue tracking (original bug IDs prefixed `DOG-`) |
 | Postman          | API endpoint testing                              |
+| Playwright       | Automated API testing                             |
 | Expo Go / device | Manual testing on iOS & Android                   |
 | GitHub           | Portfolio version control                         |
