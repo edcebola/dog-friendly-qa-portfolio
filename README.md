@@ -59,6 +59,8 @@ bug-reports/
 ## Automation
 
 API tests written with Playwright, targeting the Dog Friendly backend deployed on Render.
+Full test suite lives in the backend repo (private) and runs on every push via GitHub Actions.
+`auth.spec.js` below is included here as a portfolio sample.
 
 ```
 automation/
